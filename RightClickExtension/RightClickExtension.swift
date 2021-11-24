@@ -14,6 +14,13 @@ extension String {
     }
 }
 
+enum FileType {
+    case TxtFile
+    case DocFile
+    case XlsFile
+    case PptFile
+}
+
 class FinderSync: FIFinderSync {
 
     override init() {
@@ -32,6 +39,7 @@ class FinderSync: FIFinderSync {
         submenu.addItem(withTitle: "Createdocfile".localized, action: #selector(createEmptyDocFileClicked(_:)), keyEquivalent: "")
         submenu.addItem(withTitle: "Createexcelfile".localized, action: #selector(createEmptyExcelFileClicked(_:)), keyEquivalent: "")
         submenu.addItem(withTitle: "Createpptfile".localized, action: #selector(createEmptyPptFileClicked(_:)), keyEquivalent: "")
+        submenu.addItem(withTitle: "CreateOtherfile".localized, action: #selector(createEmptyOtherFileClicked(_:)), keyEquivalent: "")
         menuitem.submenu = submenu
         menu.addItem(menuitem)
         return menu
@@ -76,95 +84,73 @@ class FinderSync: FIFinderSync {
     }
 
     @IBAction func createEmptyTxtFileClicked(_ sender: AnyObject?) {
-        
-        guard let target = FIFinderSyncController.default().targetedURL() else {
-            NSLog("Failed to obtain targeted URL: %@")
-            return
-        }
-
-        var originalPath = target
-        let originalFilename = "newfile".localized
-        var filename = "newfile.txt".localized
-        let fileType = ".txt"
-        var counter = 1
-        
-        while FileManager.default.fileExists(atPath: originalPath.appendingPathComponent(filename).path) {
-            filename = "\(originalFilename)\(counter)\(fileType)"
-            counter+=1
-            originalPath = target
-        }
-        
-        do {
-            try "".write(to: target.appendingPathComponent(filename), atomically: true, encoding: String.Encoding.utf8)
-        } catch let error as NSError {
-            NSLog("Failed to create file: %@", error.description as NSString)
-        }
+        createFile(.TxtFile)
     }
 
     @IBAction func createEmptyDocFileClicked(_ sender: AnyObject?) {
-        
-        guard let target = FIFinderSyncController.default().targetedURL() else {
-            NSLog("Failed to obtain targeted URL: %@")
-            return
-        }
-
-        var originalPath = target
-        let originalFilename = "newfile".localized
-        var filename = "newfile.docx".localized
-        let fileType = ".docx"
-        var counter = 1
-        
-        while FileManager.default.fileExists(atPath: originalPath.appendingPathComponent(filename).path) {
-            filename = "\(originalFilename)\(counter)\(fileType)"
-            counter+=1
-            originalPath = target
-        }
-        
-        do {
-            try "".write(to: target.appendingPathComponent(filename), atomically: true, encoding: String.Encoding.utf8)
-        } catch let error as NSError {
-            NSLog("Failed to create file: %@", error.description as NSString)
-        }
+        createFile(.DocFile)
     }
     
     @IBAction func createEmptyExcelFileClicked(_ sender: AnyObject?) {
-        
-        guard let target = FIFinderSyncController.default().targetedURL() else {
-            NSLog("Failed to obtain targeted URL: %@")
-            return
-        }
-
-        var originalPath = target
-        let originalFilename = "newfile".localized
-        var filename = "newfile.xlsx".localized
-        let fileType = ".xlsx"
-        var counter = 1
-        
-        while FileManager.default.fileExists(atPath: originalPath.appendingPathComponent(filename).path) {
-            filename = "\(originalFilename)\(counter)\(fileType)"
-            counter+=1
-            originalPath = target
-        }
-        
-        do {
-            try "".write(to: target.appendingPathComponent(filename), atomically: true, encoding: String.Encoding.utf8)
-        } catch let error as NSError {
-            NSLog("Failed to create file: %@", error.description as NSString)
-        }
+        createFile(.XlsFile)
     }
     
     @IBAction func createEmptyPptFileClicked(_ sender: AnyObject?) {
-        
+        createFile(.PptFile)
+    }
+    
+    @IBAction func createEmptyOtherFileClicked(_ sender: AnyObject?) {
         guard let target = FIFinderSyncController.default().targetedURL() else {
             NSLog("Failed to obtain targeted URL: %@")
             return
         }
-
+        
+        let savePanel = NSSavePanel()
+        savePanel.canCreateDirectories = true
+        savePanel.showsTagField = false
+        savePanel.nameFieldStringValue = "newfile".localized
+        savePanel.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.modalPanelWindow)))
+        savePanel.begin { (result) in
+            if result.rawValue == NSApplication.ModalResponse.OK.rawValue {
+                do {
+                    try "".write(to: target.appendingPathComponent(savePanel.nameFieldStringValue), atomically: true, encoding: String.Encoding.utf8)
+                } catch let error as NSError {
+                    NSLog("Failed to create file: %@", error.description as NSString)
+                }
+            }
+        }
+    }
+    
+    func createFile(_ type:FileType) {
+        guard let target = FIFinderSyncController.default().targetedURL() else {
+            NSLog("Failed to obtain targeted URL: %@")
+            return
+        }
+        
         var originalPath = target
         let originalFilename = "newfile".localized
-        var filename = "newfile.pptx".localized
-        let fileType = ".pptx"
+        var filename="newfile".localized
+        var fileType=""
         var counter = 1
+        
+        switch type {
+        case .TxtFile:
+            filename = "newfile.txt".localized
+            fileType = ".txt"
+            break;
+        case .DocFile:
+            filename = "newfile.docx".localized
+            fileType = ".docx"
+            break;
+        case .XlsFile:
+            filename = "newfile.xlsx".localized
+            fileType = ".xlsx"
+            break;
+        case .PptFile:
+            filename = "newfile.pptx".localized
+            fileType = ".pptx"
+            break;
+        }
         
         while FileManager.default.fileExists(atPath: originalPath.appendingPathComponent(filename).path) {
             filename = "\(originalFilename)\(counter)\(fileType)"

@@ -12,6 +12,7 @@
 "Createdocfile" = "Create Word Document";
 "Createexcelfile" = "Create Excel Document";
 "Createpptfile" = "Create PowerPoint Document";
+"CreateOtherfile" = "Create Other File";
 "newfile" = "newfile";
 "newfile.txt" = "newfile.txt";
 "newfile.docx" = "newfile.docx";
