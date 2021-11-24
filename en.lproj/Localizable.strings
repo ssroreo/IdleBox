@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  IdleBox
+
+  Created by chaichengxun on 2021/11/24.
+  
+*/
+"IdleBox" = "Idle Box";
+"OpenTerminal" = "Open Terminal";
+"Copyselectedpaths" = "Copy selected paths";
+"Createtxtfile" = "Create Text file";
+"Createdocfile" = "Create Word Document";
+"Createexcelfile" = "Create Excel Document";
+"Createpptfile" = "Create PowerPoint Document";
+"newfile" = "newfile";
+"newfile.txt" = "newfile.txt";
+"newfile.docx" = "newfile.docx";
+"newfile.xlsx" = "newfile.xlsx";
+"newfile.pptx" = "newfile.pptx";

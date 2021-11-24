@@ -1,0 +1,533 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9372DCEA274CCA990030EF63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9372DCE9274CCA990030EF63 /* AppDelegate.swift */; };
+		9372DCEC274CCA9B0030EF63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9372DCEB274CCA9B0030EF63 /* Assets.xcassets */; };
+		9372DCEF274CCA9B0030EF63 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9372DCED274CCA9B0030EF63 /* MainMenu.xib */; };
+		9372DCFD274CCACB0030EF63 /* RightClickExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9372DCFC274CCACB0030EF63 /* RightClickExtension.swift */; };
+		9372DD02274CCACB0030EF63 /* Right Click Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9372DCFA274CCACB0030EF63 /* Right Click Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		93916E1C274DC806003FD856 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 93916E1E274DC806003FD856 /* Localizable.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9372DD00274CCACB0030EF63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9372DCDE274CCA990030EF63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9372DCF9274CCACB0030EF63;
+			remoteInfo = RightClickExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9372DD06274CCACB0030EF63 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9372DD02274CCACB0030EF63 /* Right Click Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9372DCE6274CCA990030EF63 /* Idle Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Idle Box.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9372DCE9274CCA990030EF63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9372DCEB274CCA9B0030EF63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9372DCEE274CCA9B0030EF63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		9372DCF0274CCA9B0030EF63 /* IdleBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IdleBox.entitlements; sourceTree = "<group>"; };
+		9372DCFA274CCACB0030EF63 /* Right Click Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Right Click Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9372DCFC274CCACB0030EF63 /* RightClickExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightClickExtension.swift; sourceTree = "<group>"; };
+		9372DCFE274CCACB0030EF63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9372DCFF274CCACB0030EF63 /* RightClickExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RightClickExtension.entitlements; sourceTree = "<group>"; };
+		93916E1D274DC806003FD856 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		93916E1F274DC810003FD856 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.strings"; sourceTree = "<group>"; };
+		93916E20274DC810003FD856 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9372DCE3274CCA990030EF63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9372DCF7274CCACB0030EF63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9372DCDD274CCA990030EF63 = {
+			isa = PBXGroup;
+			children = (
+				93916E1E274DC806003FD856 /* Localizable.strings */,
+				9372DCE8274CCA990030EF63 /* IdleBox */,
+				9372DCFB274CCACB0030EF63 /* RightClickExtension */,
+				9372DCE7274CCA990030EF63 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9372DCE7274CCA990030EF63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9372DCE6274CCA990030EF63 /* Idle Box.app */,
+				9372DCFA274CCACB0030EF63 /* Right Click Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9372DCE8274CCA990030EF63 /* IdleBox */ = {
+			isa = PBXGroup;
+			children = (
+				9372DCE9274CCA990030EF63 /* AppDelegate.swift */,
+				9372DCEB274CCA9B0030EF63 /* Assets.xcassets */,
+				9372DCED274CCA9B0030EF63 /* MainMenu.xib */,
+				9372DCF0274CCA9B0030EF63 /* IdleBox.entitlements */,
+			);
+			path = IdleBox;
+			sourceTree = "<group>";
+		};
+		9372DCFB274CCACB0030EF63 /* RightClickExtension */ = {
+			isa = PBXGroup;
+			children = (
+				9372DCFC274CCACB0030EF63 /* RightClickExtension.swift */,
+				9372DCFE274CCACB0030EF63 /* Info.plist */,
+				9372DCFF274CCACB0030EF63 /* RightClickExtension.entitlements */,
+			);
+			path = RightClickExtension;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9372DCE5274CCA990030EF63 /* IdleBox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9372DCF3274CCA9B0030EF63 /* Build configuration list for PBXNativeTarget "IdleBox" */;
+			buildPhases = (
+				9372DCE2274CCA990030EF63 /* Sources */,
+				9372DCE3274CCA990030EF63 /* Frameworks */,
+				9372DCE4274CCA990030EF63 /* Resources */,
+				9372DD06274CCACB0030EF63 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9372DD01274CCACB0030EF63 /* PBXTargetDependency */,
+			);
+			name = IdleBox;
+			productName = IdleBox;
+			productReference = 9372DCE6274CCA990030EF63 /* Idle Box.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9372DCF9274CCACB0030EF63 /* RightClickExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9372DD03274CCACB0030EF63 /* Build configuration list for PBXNativeTarget "RightClickExtension" */;
+			buildPhases = (
+				9372DCF6274CCACB0030EF63 /* Sources */,
+				9372DCF7274CCACB0030EF63 /* Frameworks */,
+				9372DCF8274CCACB0030EF63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RightClickExtension;
+			productName = RightClickExtension;
+			productReference = 9372DCFA274CCACB0030EF63 /* Right Click Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9372DCDE274CCA990030EF63 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					9372DCE5274CCA990030EF63 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					9372DCF9274CCACB0030EF63 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = 9372DCE1274CCA990030EF63 /* Build configuration list for PBXProject "IdleBox" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = 9372DCDD274CCA990030EF63;
+			productRefGroup = 9372DCE7274CCA990030EF63 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9372DCE5274CCA990030EF63 /* IdleBox */,
+				9372DCF9274CCACB0030EF63 /* RightClickExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9372DCE4274CCA990030EF63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9372DCEC274CCA9B0030EF63 /* Assets.xcassets in Resources */,
+				9372DCEF274CCA9B0030EF63 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9372DCF8274CCACB0030EF63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93916E1C274DC806003FD856 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9372DCE2274CCA990030EF63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9372DCEA274CCA990030EF63 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9372DCF6274CCACB0030EF63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9372DCFD274CCACB0030EF63 /* RightClickExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9372DD01274CCACB0030EF63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9372DCF9274CCACB0030EF63 /* RightClickExtension */;
+			targetProxy = 9372DD00274CCACB0030EF63 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9372DCED274CCA9B0030EF63 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9372DCEE274CCA9B0030EF63 /* Base */,
+				93916E1F274DC810003FD856 /* zh-Hans */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		93916E1E274DC806003FD856 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93916E1D274DC806003FD856 /* en */,
+				93916E20274DC810003FD856 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9372DCF1274CCA9B0030EF63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9372DCF2274CCA9B0030EF63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		9372DCF4274CCA9B0030EF63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = IdleBox/IdleBox.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = IdleBox;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainNibFile = MainMenu;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quantastar.IdleBox;
+				PRODUCT_MODULE_NAME = IdleBox;
+				PRODUCT_NAME = "Idle Box";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		9372DCF5274CCA9B0030EF63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = IdleBox/IdleBox.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = IdleBox;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainNibFile = MainMenu;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quantastar.IdleBox;
+				PRODUCT_MODULE_NAME = IdleBox;
+				PRODUCT_NAME = "Idle Box";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		9372DD04274CCACB0030EF63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = RightClickExtension/RightClickExtension.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RightClickExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Right Click Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quantastar.IdleBox.RightClickExtension;
+				PRODUCT_MODULE_NAME = RightClickExtension;
+				PRODUCT_NAME = "Right Click Extension";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		9372DD05274CCACB0030EF63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = RightClickExtension/RightClickExtension.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RightClickExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Right Click Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quantastar.IdleBox.RightClickExtension;
+				PRODUCT_MODULE_NAME = RightClickExtension;
+				PRODUCT_NAME = "Right Click Extension";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9372DCE1274CCA990030EF63 /* Build configuration list for PBXProject "IdleBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9372DCF1274CCA9B0030EF63 /* Debug */,
+				9372DCF2274CCA9B0030EF63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9372DCF3274CCA9B0030EF63 /* Build configuration list for PBXNativeTarget "IdleBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9372DCF4274CCA9B0030EF63 /* Debug */,
+				9372DCF5274CCA9B0030EF63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9372DD03274CCACB0030EF63 /* Build configuration list for PBXNativeTarget "RightClickExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9372DD04274CCACB0030EF63 /* Debug */,
+				9372DD05274CCACB0030EF63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9372DCDE274CCA990030EF63 /* Project object */;
+}
