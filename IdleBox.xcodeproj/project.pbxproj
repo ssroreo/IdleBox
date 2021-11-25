@@ -20,6 +20,7 @@
 		93B97249274F69BF00C44730 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93B97248274F69BF00C44730 /* Info.plist */; };
 		93B9724B274F6DDC00C44730 /* GeneralPane.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B9724D274F6DDC00C44730 /* GeneralPane.storyboard */; };
 		93B97253274F6DF200C44730 /* AboutPane.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B97255274F6DF200C44730 /* AboutPane.storyboard */; };
+		93B97264274F72A100C44730 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 93916E1E274DC806003FD856 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,6 +225,7 @@
 				9372DCEC274CCA9B0030EF63 /* Assets.xcassets in Resources */,
 				93B97253274F6DF200C44730 /* AboutPane.storyboard in Resources */,
 				93B97249274F69BF00C44730 /* Info.plist in Resources */,
+				93B97264274F72A100C44730 /* Localizable.strings in Resources */,
 				93B97235274F609F00C44730 /* SettingsTab.storyboard in Resources */,
 				9372DCEF274CCA9B0030EF63 /* MainMenu.xib in Resources */,
 				93B9724B274F6DDC00C44730 /* GeneralPane.storyboard in Resources */,
