@@ -8,11 +8,12 @@
 "IdleBox" = "Idle Box";
 "OpenTerminal" = "Open Terminal";
 "Copyselectedpaths" = "Copy selected paths";
-"Createtxtfile" = "Create Text file";
-"Createdocfile" = "Create Word Document";
-"Createexcelfile" = "Create Excel Document";
-"Createpptfile" = "Create PowerPoint Document";
-"CreateOtherfile" = "Create Other File";
+"Create" = "Create File";
+"Createtxtfile" = ".txt";
+"Createdocfile" = ".docx";
+"Createexcelfile" = ".xlsx";
+"Createpptfile" = ".pptx";
+"CreateOtherfile" = "Other File";
 "newfile" = "newfile";
 "newfile.txt" = "newfile.txt";
 "newfile.docx" = "newfile.docx";

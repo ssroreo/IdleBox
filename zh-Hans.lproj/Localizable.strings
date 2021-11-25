@@ -8,11 +8,12 @@
 "IdleBox" = "工具集";
 "OpenTerminal" = "打开终端";
 "Copyselectedpaths" = "拷贝路径";
-"Createtxtfile" = "创建 txt 文件";
-"Createdocfile" = "创建 word 文档";
-"Createexcelfile" = "创建 excel 文档";
-"Createpptfile" = "创建 ppt 文档";
-"CreateOtherfile" = "创建其他文件";
+"Create" = "创建文件";
+"Createtxtfile" = ".txt";
+"Createdocfile" = ".docx";
+"Createexcelfile" = ".xlsx";
+"Createpptfile" = ".pptx";
+"CreateOtherfile" = "其他文件";
 "newfile" = "新建文件";
 "newfile.txt" = "新建文件.txt";
 "newfile.docx" = "新建文件.docx";

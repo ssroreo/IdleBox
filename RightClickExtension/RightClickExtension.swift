@@ -31,10 +31,8 @@ class FinderSync: FIFinderSync {
     
     override func menu(for menuKind: FIMenuKind) -> NSMenu {
         let menu = NSMenu(title: "")
-        let menuitem = NSMenuItem(title: "IdleBox".localized, action: nil, keyEquivalent: "")
+        let menuitem = NSMenuItem(title: "Create".localized, action: nil, keyEquivalent: "")
         let submenu = NSMenu(title: "")
-        submenu.addItem(withTitle: "OpenTerminal".localized, action: #selector(openTerminalClicked(_:)), keyEquivalent: "")
-        submenu.addItem(withTitle: "Copyselectedpaths".localized, action: #selector(copyPathToClipboard), keyEquivalent: "")
         submenu.addItem(withTitle: "Createtxtfile".localized, action: #selector(createEmptyTxtFileClicked(_:)), keyEquivalent: "")
         submenu.addItem(withTitle: "Createdocfile".localized, action: #selector(createEmptyDocFileClicked(_:)), keyEquivalent: "")
         submenu.addItem(withTitle: "Createexcelfile".localized, action: #selector(createEmptyExcelFileClicked(_:)), keyEquivalent: "")
@@ -42,6 +40,8 @@ class FinderSync: FIFinderSync {
         submenu.addItem(withTitle: "CreateOtherfile".localized, action: #selector(createEmptyOtherFileClicked(_:)), keyEquivalent: "")
         menuitem.submenu = submenu
         menu.addItem(menuitem)
+        menu.addItem(withTitle: "OpenTerminal".localized, action: #selector(openTerminalClicked(_:)), keyEquivalent: "")
+        menu.addItem(withTitle: "Copyselectedpaths".localized, action: #selector(copyPathToClipboard), keyEquivalent: "")
         return menu
     }
 
@@ -113,16 +113,17 @@ class FinderSync: FIFinderSync {
             NSLog("Failed to obtain targeted URL: %@")
             return
         }
-        
-        let savePanel = NSSavePanel()
-        savePanel.canCreateDirectories = true
-        savePanel.showsTagField = false
-        savePanel.nameFieldStringValue = "newfile".localized
-        savePanel.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.modalPanelWindow)))
-        savePanel.begin { (result) in
-            if result.rawValue == NSApplication.ModalResponse.OK.rawValue {
+        NSApp.activate(ignoringOtherApps: true)
+        DispatchQueue.main.async {
+            let savePanel = NSSavePanel()
+            savePanel.directoryURL = URL(fileURLWithPath: target.path)
+            savePanel.canCreateDirectories = true
+            savePanel.showsTagField = false
+            savePanel.nameFieldStringValue = "newfile".localized
+            savePanel.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.modalPanelWindow)))
+            if (savePanel.runModal() == NSApplication.ModalResponse.OK),let url = savePanel.url{
                 do {
-                    try "".write(to: target.appendingPathComponent(savePanel.nameFieldStringValue), atomically: true, encoding: String.Encoding.utf8)
+                    try "".write(to: url, atomically: true, encoding: String.Encoding.utf8)
                 } catch let error as NSError {
                     NSLog("Failed to create file: %@", error.description as NSString)
                 }
