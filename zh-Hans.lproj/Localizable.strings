@@ -19,3 +19,5 @@
 "newfile.docx" = "新建文件.docx";
 "newfile.xlsx" = "新建文件.xlsx";
 "newfile.pptx" = "新建文件.pptx";
+"NotAllowedInformative" = "NewCanvas extension is not been allowed.";
+"AllowedInformative" = "NewCanvas extension has already been allowed.";

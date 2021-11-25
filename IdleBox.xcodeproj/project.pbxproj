@@ -13,6 +13,13 @@
 		9372DCFD274CCACB0030EF63 /* RightClickExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9372DCFC274CCACB0030EF63 /* RightClickExtension.swift */; };
 		9372DD02274CCACB0030EF63 /* Right Click Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9372DCFA274CCACB0030EF63 /* Right Click Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		93916E1C274DC806003FD856 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 93916E1E274DC806003FD856 /* Localizable.strings */; };
+		93B97231274F5D0400C44730 /* SettingsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B9722F274F5D0400C44730 /* SettingsTab.swift */; };
+		93B97235274F609F00C44730 /* SettingsTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B97237274F609F00C44730 /* SettingsTab.storyboard */; };
+		93B97241274F65D000C44730 /* AboutPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B97240274F65CF00C44730 /* AboutPane.swift */; };
+		93B97243274F65DC00C44730 /* GeneralPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B97242274F65DC00C44730 /* GeneralPane.swift */; };
+		93B97249274F69BF00C44730 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93B97248274F69BF00C44730 /* Info.plist */; };
+		93B9724B274F6DDC00C44730 /* GeneralPane.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B9724D274F6DDC00C44730 /* GeneralPane.storyboard */; };
+		93B97253274F6DF200C44730 /* AboutPane.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B97255274F6DF200C44730 /* AboutPane.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +59,19 @@
 		93916E1D274DC806003FD856 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		93916E1F274DC810003FD856 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.strings"; sourceTree = "<group>"; };
 		93916E20274DC810003FD856 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		93B9722F274F5D0400C44730 /* SettingsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTab.swift; sourceTree = "<group>"; };
+		93B97236274F609F00C44730 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SettingsTab.storyboard; sourceTree = "<group>"; };
+		93B97240274F65CF00C44730 /* AboutPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPane.swift; sourceTree = "<group>"; };
+		93B97242274F65DC00C44730 /* GeneralPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPane.swift; sourceTree = "<group>"; };
+		93B97248274F69BF00C44730 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93B9724C274F6DDC00C44730 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GeneralPane.storyboard; sourceTree = "<group>"; };
+		93B97254274F6DF200C44730 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AboutPane.storyboard; sourceTree = "<group>"; };
+		93B9725B274F6E0900C44730 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AboutPane.strings; sourceTree = "<group>"; };
+		93B9725F274F6ECD00C44730 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AboutPane.strings"; sourceTree = "<group>"; };
+		93B97260274F6ED200C44730 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/GeneralPane.strings; sourceTree = "<group>"; };
+		93B97261274F6ED600C44730 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/GeneralPane.strings"; sourceTree = "<group>"; };
+		93B97262274F6EDF00C44730 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SettingsTab.strings; sourceTree = "<group>"; };
+		93B97263274F6EE100C44730 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SettingsTab.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +118,13 @@
 				9372DCEB274CCA9B0030EF63 /* Assets.xcassets */,
 				9372DCED274CCA9B0030EF63 /* MainMenu.xib */,
 				9372DCF0274CCA9B0030EF63 /* IdleBox.entitlements */,
+				93B97237274F609F00C44730 /* SettingsTab.storyboard */,
+				93B9722F274F5D0400C44730 /* SettingsTab.swift */,
+				93B9724D274F6DDC00C44730 /* GeneralPane.storyboard */,
+				93B97242274F65DC00C44730 /* GeneralPane.swift */,
+				93B97255274F6DF200C44730 /* AboutPane.storyboard */,
+				93B97240274F65CF00C44730 /* AboutPane.swift */,
+				93B97248274F69BF00C44730 /* Info.plist */,
 			);
 			path = IdleBox;
 			sourceTree = "<group>";
@@ -195,7 +222,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9372DCEC274CCA9B0030EF63 /* Assets.xcassets in Resources */,
+				93B97253274F6DF200C44730 /* AboutPane.storyboard in Resources */,
+				93B97249274F69BF00C44730 /* Info.plist in Resources */,
+				93B97235274F609F00C44730 /* SettingsTab.storyboard in Resources */,
 				9372DCEF274CCA9B0030EF63 /* MainMenu.xib in Resources */,
+				93B9724B274F6DDC00C44730 /* GeneralPane.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +245,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93B97241274F65D000C44730 /* AboutPane.swift in Sources */,
+				93B97231274F5D0400C44730 /* SettingsTab.swift in Sources */,
+				93B97243274F65DC00C44730 /* GeneralPane.swift in Sources */,
 				9372DCEA274CCA990030EF63 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +287,36 @@
 				93916E20274DC810003FD856 /* zh-Hans */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		93B97237274F609F00C44730 /* SettingsTab.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93B97236274F609F00C44730 /* Base */,
+				93B97262274F6EDF00C44730 /* en */,
+				93B97263274F6EE100C44730 /* zh-Hans */,
+			);
+			name = SettingsTab.storyboard;
+			sourceTree = "<group>";
+		};
+		93B9724D274F6DDC00C44730 /* GeneralPane.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93B9724C274F6DDC00C44730 /* Base */,
+				93B97260274F6ED200C44730 /* en */,
+				93B97261274F6ED600C44730 /* zh-Hans */,
+			);
+			name = GeneralPane.storyboard;
+			sourceTree = "<group>";
+		};
+		93B97255274F6DF200C44730 /* AboutPane.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93B97254274F6DF200C44730 /* Base */,
+				93B9725B274F6E0900C44730 /* en */,
+				93B9725F274F6ECD00C44730 /* zh-Hans */,
+			);
+			name = AboutPane.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -387,6 +451,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IdleBox/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = IdleBox;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -418,6 +483,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IdleBox/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = IdleBox;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
