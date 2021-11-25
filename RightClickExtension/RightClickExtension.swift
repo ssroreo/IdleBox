@@ -71,10 +71,19 @@ class FinderSync: FIFinderSync {
             NSLog("Failed to obtain targeted URL: %@")
             return
         }
+        var path = target
+        
+        let items = FIFinderSyncController.default().selectedItemURLs() ?? []
+        if items.count == 1, let first = items.first {
+            var isDirectory: ObjCBool = false
+            if FileManager.default.fileExists(atPath: first.path, isDirectory: &isDirectory), isDirectory.boolValue {
+                path = URL(fileURLWithPath: first.path)
+            }
+        }
         
         let task = Process()
         task.executableURL = URL(fileURLWithPath: "/usr/bin/open")
-        task.arguments = ["-a", "terminal", "\(target)"]
+        task.arguments = ["-a", "terminal", "\(path)"]
         
         do {
             try task.run()
