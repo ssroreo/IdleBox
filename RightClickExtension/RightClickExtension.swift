@@ -43,9 +43,14 @@ class FinderSync: FIFinderSync {
         menu.addItem(openTerminal)
         menu.addItem(openTerminalTab)
         menu.addItem(openTerminalInCurrentFolder)
-        menu.addItem(openITerm2)
-        menu.addItem(openITerm2Tab)
-        menu.addItem(openITerm2InCurrentFolder)
+        
+        let iTerms = (LSCopyApplicationURLsForBundleIdentifier("com.googlecode.iterm2" as CFString, nil)?.takeRetainedValue() as? [Any]) ?? []
+        if iTerms.count > 0 {
+            menu.addItem(openITerm2)
+            menu.addItem(openITerm2Tab)
+            menu.addItem(openITerm2InCurrentFolder)
+        }
+        
         return menu
     }
     
