@@ -61,7 +61,7 @@ class FinderSync: FIFinderSync {
             return NSMenuItem(title: "OpenTerminal".localized, action: #selector(openTerminal(_:)), keyEquivalent: "")
         case .custom(let title, let selector):
             if title == MenuItemTitle.separator {
-                let s = NSMenuItem(title: "----------", action: nil, keyEquivalent: "")
+                let s = NSMenuItem(title: "————————", action: nil, keyEquivalent: "")
                 s.isEnabled = false
                 return s
             }else {
@@ -104,6 +104,7 @@ extension FinderSync {
         NSApp.activate(ignoringOtherApps: true)
         DispatchQueue.main.async {
             let savePanel = NSSavePanel()
+            savePanel.title = "NewFile".localized
             savePanel.directoryURL = target
             savePanel.canCreateDirectories = true
             savePanel.showsTagField = false
