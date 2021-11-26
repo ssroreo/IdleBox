@@ -12,6 +12,9 @@
 "OpenTerminal" = "Open Terminal";
 "OpenTerminalOnTab" = "Open Terminal On Tab";
 "OpenTerminalInCurrentFolder" = "Open Terminal In Current Folder";
+"OpeniTerm2OnTab" = "Open iTerm2 On Tab";
+"OpeniTerm2" = "Open iTerm2";
+"OpeniTerm2InCurrentFolder" = "Open iTerm2 In Current Folder";
 "NotAllowedInformative" = "Right Click Extension is not been allowed.";
 "AllowedInformative" = "Right Click Extension has already been allowed.";
 "TextFile" = "TXT";

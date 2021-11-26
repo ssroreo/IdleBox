@@ -29,6 +29,9 @@ class FinderSync: FIFinderSync {
         let openTerminal = creatMenuItem(for: .openTerminal)
         let openTerminalTab = creatMenuItem(for: .openTerminalTab)
         let openTerminalInCurrentFolder = creatMenuItem(for: .openTerminalInCurrentFolder)
+        let openITerm2 = creatMenuItem(for: .openITerm2)
+        let openITerm2Tab = creatMenuItem(for: .openITerm2Tab)
+        let openITerm2InCurrentFolder = creatMenuItem(for: .openITerm2InCurrentFolder)
         
         let newFileSub = NSMenu()
         self.newFileMenus.forEach { (menuItem) in
@@ -40,6 +43,9 @@ class FinderSync: FIFinderSync {
         menu.addItem(openTerminal)
         menu.addItem(openTerminalTab)
         menu.addItem(openTerminalInCurrentFolder)
+        menu.addItem(openITerm2)
+        menu.addItem(openITerm2Tab)
+        menu.addItem(openITerm2InCurrentFolder)
         return menu
     }
     
@@ -49,6 +55,9 @@ class FinderSync: FIFinderSync {
         case openTerminalTab
         case openTerminal
         case openTerminalInCurrentFolder
+        case openITerm2Tab
+        case openITerm2
+        case openITerm2InCurrentFolder
         case custom(title: String,selector: Selector)
     }
     
@@ -72,6 +81,12 @@ class FinderSync: FIFinderSync {
             }
         case .openTerminalInCurrentFolder:
             return NSMenuItem(title: "OpenTerminalInCurrentFolder".localized, action: #selector(openTerminalInCurrentFolder(_:)), keyEquivalent: "")
+        case .openITerm2Tab:
+            return NSMenuItem(title: "OpeniTerm2OnTab".localized, action: #selector(openITerm2Tab(_:)), keyEquivalent: "")
+        case .openITerm2:
+            return NSMenuItem(title: "OpeniTerm2".localized, action: #selector(openITerm2(_:)), keyEquivalent: "")
+        case .openITerm2InCurrentFolder:
+            return NSMenuItem(title: "OpeniTerm2InCurrentFolder".localized, action: #selector(openITerm2InCurrentFolder(_:)), keyEquivalent: "")
         }
     }
 }
@@ -169,7 +184,35 @@ extension FinderSync {
         }
         let urls = [target]
         DispatchQueue.main.async {
-            let service = "New Terminal Tab at Folder"
+            let service = "New Terminal at Folder"
+            _ = ServiceRunner.run(service: service, withFileURLs: urls)
+        }
+    }
+    
+    @IBAction func openITerm2(_ sender: NSMenuItem?) {
+        let urls = urlsToOpen
+        DispatchQueue.main.async {
+            let service = "New iTerm2 Window Here"
+            _ = ServiceRunner.run(service: service, withFileURLs: urls)
+        }
+    }
+    
+    @IBAction func openITerm2Tab(_ sender: NSMenuItem?) {
+        let urls = urlsToOpen
+        DispatchQueue.main.async {
+            let service = "New iTerm2 Tab Here"
+            _ = ServiceRunner.run(service: service, withFileURLs: urls)
+        }
+    }
+    
+    @IBAction func openITerm2InCurrentFolder(_ sender: NSMenuItem?) {
+        guard let target = FIFinderSyncController.default().targetedURL() else {
+            NSLog("target is nil – attempting to open from an unknown path?")
+            return
+        }
+        let urls = [target]
+        DispatchQueue.main.async {
+            let service = "New iTerm2 Window Here"
             _ = ServiceRunner.run(service: service, withFileURLs: urls)
         }
     }
