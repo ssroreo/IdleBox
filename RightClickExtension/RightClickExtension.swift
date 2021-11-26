@@ -97,18 +97,21 @@ extension FinderSync {
     }
     
     @IBAction func newOtherFile(_ sender: NSMenuItem?) {
-        let urls = urlsToOpen
+        guard let target = FIFinderSyncController.default().targetedURL() else {
+            NSLog("Failed to obtain targeted URL: %@")
+            return
+        }
         NSApp.activate(ignoringOtherApps: true)
         DispatchQueue.main.async {
             let savePanel = NSSavePanel()
-            savePanel.directoryURL = urls.first
+            savePanel.directoryURL = target
             savePanel.canCreateDirectories = true
             savePanel.showsTagField = false
             savePanel.nameFieldStringValue = "newfile".localized
             savePanel.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.modalPanelWindow)))
-            if (savePanel.runModal() == NSApplication.ModalResponse.OK),let url = savePanel.url{
+            if (savePanel.runModal() == NSApplication.ModalResponse.OK){
                 do {
-                    try "".write(to: url, atomically: true, encoding: String.Encoding.utf8)
+                    try "".write(to: target.appendingPathComponent(savePanel.nameFieldStringValue), atomically: true, encoding: String.Encoding.utf8)
                 } catch let error as NSError {
                     NSLog("Failed to create file: %@", error.description as NSString)
                 }
@@ -168,7 +171,7 @@ extension FinderSync {
         pasteboard.clearContents()
         let success = pasteboard.setString(str.trimmingCharacters(in: .whitespacesAndNewlines), forType: .string)
         if (!success) {
-            
+            NSLog("copy path failed")
         }
     }
 }
