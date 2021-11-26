@@ -9,8 +9,9 @@
 "newfile" = "新建文件";
 "NewFile" = "新建文件";
 "CopyPath" = "拷贝路径";
-"OpenTerminal" = "打开终端";
+"OpenTerminal" = "打开终端窗口";
 "OpenTerminalOnTab" = "打开终端标签页";
+"OpenTerminalInCurrentFolder" = "在当前文件夹打开终端";
 "NotAllowedInformative" = "Right Click Extension 未启用";
 "AllowedInformative" = "Right Click Extension 已启用";
 "TextFile" = "TXT";

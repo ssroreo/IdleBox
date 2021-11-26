@@ -11,6 +11,7 @@
 "CopyPath" = "Copy Path";
 "OpenTerminal" = "Open Terminal";
 "OpenTerminalOnTab" = "Open Terminal On Tab";
+"OpenTerminalInCurrentFolder" = "Open Terminal In Current Folder";
 "NotAllowedInformative" = "Right Click Extension is not been allowed.";
 "AllowedInformative" = "Right Click Extension has already been allowed.";
 "TextFile" = "TXT";

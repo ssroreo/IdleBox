@@ -28,6 +28,7 @@ class FinderSync: FIFinderSync {
         let copyPath = creatMenuItem(for: .copyPath)
         let openTerminal = creatMenuItem(for: .openTerminal)
         let openTerminalTab = creatMenuItem(for: .openTerminalTab)
+        let openTerminalInCurrentFolder = creatMenuItem(for: .openTerminalInCurrentFolder)
         
         let newFileSub = NSMenu()
         self.newFileMenus.forEach { (menuItem) in
@@ -38,6 +39,7 @@ class FinderSync: FIFinderSync {
         menu.addItem(copyPath)
         menu.addItem(openTerminal)
         menu.addItem(openTerminalTab)
+        menu.addItem(openTerminalInCurrentFolder)
         return menu
     }
     
@@ -46,6 +48,7 @@ class FinderSync: FIFinderSync {
         case copyPath
         case openTerminalTab
         case openTerminal
+        case openTerminalInCurrentFolder
         case custom(title: String,selector: Selector)
     }
     
@@ -67,6 +70,8 @@ class FinderSync: FIFinderSync {
             }else {
                 return NSMenuItem(title: title, action: selector, keyEquivalent: "")
             }
+        case .openTerminalInCurrentFolder:
+            return NSMenuItem(title: "OpenTerminalInCurrentFolder".localized, action: #selector(openTerminalInCurrentFolder(_:)), keyEquivalent: "")
         }
     }
 }
@@ -151,6 +156,18 @@ extension FinderSync {
     
     @IBAction func openTerminalTab(_ sender: NSMenuItem?) {
         let urls = urlsToOpen
+        DispatchQueue.main.async {
+            let service = "New Terminal Tab at Folder"
+            _ = ServiceRunner.run(service: service, withFileURLs: urls)
+        }
+    }
+    
+    @IBAction func openTerminalInCurrentFolder(_ sender: NSMenuItem?) {
+        guard let target = FIFinderSyncController.default().targetedURL() else {
+            NSLog("target is nil – attempting to open from an unknown path?")
+            return
+        }
+        let urls = [target]
         DispatchQueue.main.async {
             let service = "New Terminal Tab at Folder"
             _ = ServiceRunner.run(service: service, withFileURLs: urls)
