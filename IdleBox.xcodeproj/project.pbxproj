@@ -21,6 +21,8 @@
 		93B9724B274F6DDC00C44730 /* GeneralPane.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B9724D274F6DDC00C44730 /* GeneralPane.storyboard */; };
 		93B97253274F6DF200C44730 /* AboutPane.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B97255274F6DF200C44730 /* AboutPane.storyboard */; };
 		93B97264274F72A100C44730 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 93916E1E274DC806003FD856 /* Localizable.strings */; };
+		93B97266274FA32700C44730 /* NSPasteboard+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B97265274FA32700C44730 /* NSPasteboard+Additions.swift */; };
+		93B97269274FA70A00C44730 /* NewFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B97268274FA70A00C44730 /* NewFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		93B97261274F6ED600C44730 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/GeneralPane.strings"; sourceTree = "<group>"; };
 		93B97262274F6EDF00C44730 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SettingsTab.strings; sourceTree = "<group>"; };
 		93B97263274F6EE100C44730 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SettingsTab.strings"; sourceTree = "<group>"; };
+		93B97265274FA32700C44730 /* NSPasteboard+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPasteboard+Additions.swift"; sourceTree = "<group>"; };
+		93B97268274FA70A00C44730 /* NewFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,11 +137,21 @@
 		9372DCFB274CCACB0030EF63 /* RightClickExtension */ = {
 			isa = PBXGroup;
 			children = (
+				93B97267274FA6FA00C44730 /* Init */,
 				9372DCFC274CCACB0030EF63 /* RightClickExtension.swift */,
 				9372DCFE274CCACB0030EF63 /* Info.plist */,
 				9372DCFF274CCACB0030EF63 /* RightClickExtension.entitlements */,
+				93B97265274FA32700C44730 /* NSPasteboard+Additions.swift */,
 			);
 			path = RightClickExtension;
+			sourceTree = "<group>";
+		};
+		93B97267274FA6FA00C44730 /* Init */ = {
+			isa = PBXGroup;
+			children = (
+				93B97268274FA70A00C44730 /* NewFile.swift */,
+			);
+			name = Init;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +273,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9372DCFD274CCACB0030EF63 /* RightClickExtension.swift in Sources */,
+				93B97266274FA32700C44730 /* NSPasteboard+Additions.swift in Sources */,
+				93B97269274FA70A00C44730 /* NewFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

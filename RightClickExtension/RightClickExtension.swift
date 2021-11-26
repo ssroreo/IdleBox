@@ -14,13 +14,6 @@ extension String {
     }
 }
 
-enum FileType {
-    case TxtFile
-    case DocFile
-    case XlsFile
-    case PptFile
-}
-
 class FinderSync: FIFinderSync {
 
     override init() {
@@ -30,93 +23,85 @@ class FinderSync: FIFinderSync {
     }
     
     override func menu(for menuKind: FIMenuKind) -> NSMenu {
-        let menu = NSMenu(title: "")
-        let menuitem = NSMenuItem(title: "Create".localized, action: nil, keyEquivalent: "")
-        let submenu = NSMenu(title: "")
-        submenu.addItem(withTitle: "Createtxtfile".localized, action: #selector(createEmptyTxtFileClicked(_:)), keyEquivalent: "")
-        submenu.addItem(withTitle: "Createdocfile".localized, action: #selector(createEmptyDocFileClicked(_:)), keyEquivalent: "")
-        submenu.addItem(withTitle: "Createexcelfile".localized, action: #selector(createEmptyExcelFileClicked(_:)), keyEquivalent: "")
-        submenu.addItem(withTitle: "Createpptfile".localized, action: #selector(createEmptyPptFileClicked(_:)), keyEquivalent: "")
-        submenu.addItem(withTitle: "CreateOtherfile".localized, action: #selector(createEmptyOtherFileClicked(_:)), keyEquivalent: "")
-        menuitem.submenu = submenu
-        menu.addItem(menuitem)
-        menu.addItem(withTitle: "OpenTerminal".localized, action: #selector(openTerminalClicked(_:)), keyEquivalent: "")
-        menu.addItem(withTitle: "Copyselectedpaths".localized, action: #selector(copyPathToClipboard), keyEquivalent: "")
+        let menu = NSMenu()
+        let newFile = creatMenuItem(for: .newFile)
+        let copyPath = creatMenuItem(for: .copyPath)
+        let openTerminal = creatMenuItem(for: .openTerminal)
+        let openTerminalTab = creatMenuItem(for: .openTerminalTab)
+        
+        let newFileSub = NSMenu()
+        self.newFileMenus.forEach { (menuItem) in
+            newFileSub.addItem(menuItem)
+        }
+        newFile.submenu = newFileSub
+        menu.addItem(newFile)
+        menu.addItem(copyPath)
+        menu.addItem(openTerminal)
+        menu.addItem(openTerminalTab)
         return menu
     }
-
-    @IBAction func copyPathToClipboard(_ sender: AnyObject?) {
-        
-        guard let target = FIFinderSyncController.default().selectedItemURLs() else {
-            NSLog("Failed to obtain targeted URLs: %@")
-            return
-        }
-        
-        let pasteboard = NSPasteboard.general
-        pasteboard.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
-        var result = ""
-        
-        for path in target {
-            result.append(contentsOf: path.relativePath)
-            result.append("\n")
-        }
-        result.removeLast()
-
-        pasteboard.setString(result, forType: NSPasteboard.PasteboardType.string)
+    
+    enum MenuItemType {
+        case newFile
+        case copyPath
+        case openTerminalTab
+        case openTerminal
+        case custom(title: String,selector: Selector)
     }
-
-    @IBAction func openTerminalClicked(_ sender: AnyObject?) {
-        
-        guard let target = FIFinderSyncController.default().targetedURL() else {
-            NSLog("Failed to obtain targeted URL: %@")
-            return
-        }
-        var path = target
-        
-        let items = FIFinderSyncController.default().selectedItemURLs() ?? []
-        if items.count == 1, let first = items.first {
-            var isDirectory: ObjCBool = false
-            if FileManager.default.fileExists(atPath: first.path, isDirectory: &isDirectory), isDirectory.boolValue {
-                path = URL(fileURLWithPath: first.path)
+    
+    func creatMenuItem(for menuType: MenuItemType) -> NSMenuItem {
+        switch menuType {
+        case .newFile:
+            return NSMenuItem(title: NSLocalizedString("New File", comment: ""), action: nil, keyEquivalent: "")
+        case .copyPath:
+            return NSMenuItem(title: NSLocalizedString("Copy Path", comment: ""), action: #selector(copyPath(_:)), keyEquivalent: "")
+        case .openTerminalTab:
+            return NSMenuItem(title: NSLocalizedString("Open Terminal On Tab", comment: ""), action: #selector(openTerminalTab(_:)), keyEquivalent: "")
+        case .openTerminal:
+            return NSMenuItem(title: NSLocalizedString("Open Terminal", comment: ""), action: #selector(openTerminal(_:)), keyEquivalent: "")
+        case .custom(let title, let selector):
+            if title == MenuItemTitle.separator {
+                let s = NSMenuItem(title: "----------", action: nil, keyEquivalent: "")
+                s.isEnabled = false
+                return s
+            }else {
+                return NSMenuItem(title: title, action: selector, keyEquivalent: "")
             }
         }
-        
-        let task = Process()
-        task.executableURL = URL(fileURLWithPath: "/usr/bin/open")
-        task.arguments = ["-a", "terminal", "\(path)"]
-        
-        do {
-            try task.run()
-        } catch let error as NSError {
-            NSLog("Failed to open Terminal.app: %@", error.description as NSString)
-        }
     }
+}
 
-    @IBAction func createEmptyTxtFileClicked(_ sender: AnyObject?) {
-        createFile(.TxtFile)
-    }
-
-    @IBAction func createEmptyDocFileClicked(_ sender: AnyObject?) {
-        createFile(.DocFile)
-    }
-    
-    @IBAction func createEmptyExcelFileClicked(_ sender: AnyObject?) {
-        createFile(.XlsFile)
-    }
-    
-    @IBAction func createEmptyPptFileClicked(_ sender: AnyObject?) {
-        createFile(.PptFile)
-    }
-    
-    @IBAction func createEmptyOtherFileClicked(_ sender: AnyObject?) {
+extension FinderSync {
+    @IBAction func newFile(_ sender: NSMenuItem?) {
         guard let target = FIFinderSyncController.default().targetedURL() else {
             NSLog("Failed to obtain targeted URL: %@")
             return
         }
+        var originalPath = target
+        let originalFilename = "newfile".localized
+        var filename="newfile".localized+"."+getFileType(menuItemTitle: sender?.title)
+        let fileType="."+getFileType(menuItemTitle: sender?.title)
+        var counter = 1
+        
+        while FileManager.default.fileExists(atPath: originalPath.appendingPathComponent(filename).path) {
+            filename = "\(originalFilename)\(counter)\(fileType)"
+            counter+=1
+            originalPath = target
+        }
+        
+        do {
+            try "".write(to: target.appendingPathComponent(filename), atomically: true, encoding: String.Encoding.utf8)
+        } catch let error as NSError {
+            NSLog("Failed to create file: %@", error.description as NSString)
+        }
+    }
+    
+    @IBAction func newOtherFile(_ sender: NSMenuItem?) {
+        let urls = urlsToOpen
         NSApp.activate(ignoringOtherApps: true)
         DispatchQueue.main.async {
             let savePanel = NSSavePanel()
-            savePanel.directoryURL = URL(fileURLWithPath: target.path)
+            savePanel.directoryURL = urls.first
             savePanel.canCreateDirectories = true
             savePanel.showsTagField = false
             savePanel.nameFieldStringValue = "newfile".localized
@@ -131,48 +116,90 @@ class FinderSync: FIFinderSync {
         }
     }
     
-    func createFile(_ type:FileType) {
-        guard let target = FIFinderSyncController.default().targetedURL() else {
-            NSLog("Failed to obtain targeted URL: %@")
+    /// 将要打开的路径
+    private var urlsToOpen: [URL] {
+        get {
+            guard let target = FIFinderSyncController.default().targetedURL() else {
+                NSLog("target is nil – attempting to open from an unknown path?")
+                return []
+            }
+            
+            guard let items = FIFinderSyncController.default().selectedItemURLs() else {
+                NSLog("items is nil – attempting to open from an unknown path?")
+                return []
+            }
+            
+            if items.count > 0 {
+                return items
+            } else {
+                return [ target ]
+            }
+        }
+    }
+    
+    @IBAction func openTerminal(_ sender: NSMenuItem?) {
+        let urls = urlsToOpen
+        DispatchQueue.main.async {
+            let service = "New Terminal at Folder"
+            _ = ServiceRunner.run(service: service, withFileURLs: urls)
+        }
+    }
+    
+    @IBAction func openTerminalTab(_ sender: NSMenuItem?) {
+        let urls = urlsToOpen
+        DispatchQueue.main.async {
+            let service = "New Terminal Tab at Folder"
+            _ = ServiceRunner.run(service: service, withFileURLs: urls)
+        }
+    }
+    
+    @IBAction func copyPath(_ sender: NSMenuItem?) {
+        let items = FIFinderSyncController.default().selectedItemURLs()
+        guard let paths = items else {
             return
         }
-        
-        var originalPath = target
-        let originalFilename = "newfile".localized
-        var filename="newfile".localized
-        var fileType=""
-        var counter = 1
-        
-        switch type {
-        case .TxtFile:
-            filename = "newfile.txt".localized
-            fileType = ".txt"
-            break;
-        case .DocFile:
-            filename = "newfile.docx".localized
-            fileType = ".docx"
-            break;
-        case .XlsFile:
-            filename = "newfile.xlsx".localized
-            fileType = ".xlsx"
-            break;
-        case .PptFile:
-            filename = "newfile.pptx".localized
-            fileType = ".pptx"
-            break;
+        var str: String = ""
+        for obj in paths {
+            str.append(obj.path)
+            str.append("\n")
         }
         
-        while FileManager.default.fileExists(atPath: originalPath.appendingPathComponent(filename).path) {
-            filename = "\(originalFilename)\(counter)\(fileType)"
-            counter+=1
-            originalPath = target
-        }
-        
-        do {
-            try "".write(to: target.appendingPathComponent(filename), atomically: true, encoding: String.Encoding.utf8)
-        } catch let error as NSError {
-            NSLog("Failed to create file: %@", error.description as NSString)
+        let pasteboard = NSPasteboard.general
+        pasteboard.clearContents()
+        let success = pasteboard.setString(str.trimmingCharacters(in: .whitespacesAndNewlines), forType: .string)
+        if (!success) {
+            
         }
     }
 }
 
+class ServiceRunner {
+    fileprivate static var pasteboard: NSPasteboard = {
+        let bundleIdentifier = Bundle.main.bundleIdentifier!
+        return NSPasteboard(name: NSPasteboard.Name(rawValue: "\(bundleIdentifier).pasteboard"))
+    }()
+    
+    class func run(service: String, withFileURLs fileURLs: [URL]) -> Bool {
+        if !Thread.isMainThread {
+            fatalError("ServiceRunner.run() called from non-main thread!")
+        }
+        
+        var pasteboardItems: [NSPasteboardItem] = []
+        for url in fileURLs {
+            let item = NSPasteboardItem()
+            item.setString(url.path, forType: .compatString)
+            pasteboardItems.append(item)
+        }
+        
+        pasteboard.declareTypes([ .compatString ], owner: nil)
+        pasteboard.writeObjects(pasteboardItems)
+        
+        if !NSPerformService(service, self.pasteboard) {
+            NSLog("service execution failed, and we don’t know why!!")
+            return false
+        }
+        
+        return true
+    }
+    
+}
