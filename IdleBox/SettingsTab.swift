@@ -37,7 +37,7 @@ class SettingsTab: NSTabViewController {
             self.view.frame.size = originalSize
             return
         }
-        window.title = "NewCanvas  〉\(title)"
+        window.title = "\(title)"
         var frame = window.frame
         frame.origin.y += delta
         frame.size.height -= delta

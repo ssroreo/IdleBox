@@ -2,10 +2,10 @@
 /* Class = "NSViewController"; title = "General"; ObjectID = "2Jp-Dk-fKe"; */
 "2Jp-Dk-fKe.title" = "通用";
 
-/* Class = "NSTextFieldCell"; title = "NewCanvas extension requires permission.\nPlease give permission in the system preferences."; ObjectID = "76z-Iq-ZS3"; */
-"76z-Iq-ZS3.title" = "Right Click Extension 需要系统权限.\n请在系统首选项中授予权限 .";
+/* Class = "NSTextFieldCell"; title = "Right Click Extension requires permission\nPlease give permission in the system preferences"; ObjectID = "76z-Iq-ZS3"; */
+"76z-Iq-ZS3.title" = "Right Click Extension 需要系统权限\n请在系统首选项中授予权限";
 
-/* Class = "NSTextFieldCell"; title = "NewCanvas extension is not been allowed."; ObjectID = "H3T-zj-SP5"; */
+/* Class = "NSTextFieldCell"; title = "Right Click Extension is not been allowed"; ObjectID = "H3T-zj-SP5"; */
 "H3T-zj-SP5.title" = "Right Click Extension 未启用";
 
 /* Class = "NSButtonCell"; title = "Open System Preferences"; ObjectID = "fE4-Hb-5ES"; */

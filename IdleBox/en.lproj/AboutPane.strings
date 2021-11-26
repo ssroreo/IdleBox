@@ -1,12 +1,12 @@
 
-/* Class = "NSTextFieldCell"; title = "©︎ 2021 Quanta Star"; ObjectID = "3Oz-la-Wrv"; */
-"3Oz-la-Wrv.title" = "©︎ 2021 Quanta Star";
+/* Class = "NSTextFieldCell"; title = "Copyright © 2021 ssroreo. All rights reserved."; ObjectID = "3Oz-la-Wrv"; */
+"3Oz-la-Wrv.title" = "Copyright © 2021 ssroreo. All rights reserved.";
 
 /* Class = "NSViewController"; title = "About"; ObjectID = "h8m-36-hqw"; */
 "h8m-36-hqw.title" = "About";
 
-/* Class = "NSTextFieldCell"; title = "version 1.0"; ObjectID = "map-l9-34S"; */
-"map-l9-34S.title" = "version 1.0";
+/* Class = "NSTextFieldCell"; title = "Version 1.0"; ObjectID = "map-l9-34S"; */
+"map-l9-34S.title" = "Version 1.0";
 
 /* Class = "NSTextFieldCell"; title = "Idle Box"; ObjectID = "ubm-uc-FIo"; */
 "ubm-uc-FIo.title" = "Idle Box";

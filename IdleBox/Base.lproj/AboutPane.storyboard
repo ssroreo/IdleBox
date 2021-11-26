@@ -11,78 +11,54 @@
             <objects>
                 <viewController title="About" showSeguePresentationStyle="single" id="h8m-36-hqw" customClass="AboutPane" customModule="IdleBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="cgb-xV-mT0">
-                        <rect key="frame" x="0.0" y="0.0" width="410" height="140"/>
+                        <rect key="frame" x="0.0" y="0.0" width="410" height="176"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uFh-KD-OxI">
-                                <rect key="frame" x="40" y="20" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="bVV-US-6Hs"/>
-                                    <constraint firstAttribute="height" constant="100" id="wlN-2D-2Fx"/>
-                                </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="about" id="E7T-cH-GlP"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZXR-ar-8AN">
+                                <rect key="frame" x="170" y="44" width="69" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Version 1.0" id="BHa-yj-01I">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VXv-yO-mda">
+                                <rect key="frame" x="63" y="20" width="286" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Copyright © 2021 ssroreo. All rights reserved." id="1kC-FZ-jbg">
+                                    <font key="font" size="13" name=".SFNS-Regular"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f44-nl-3jo">
+                                <rect key="frame" x="174" y="92" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Icon" id="lTi-zn-Ul5"/>
                             </imageView>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="qyO-6c-pXW">
-                                <rect key="frame" x="160" y="20" width="200" height="100"/>
-                                <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WpF-s4-iN9">
-                                        <rect key="frame" x="-2" y="65" width="106" height="35"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Idle Box" id="ubm-uc-FIo">
-                                            <font key="font" metaFont="system" size="30"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1p9-W9-GbD">
-                                        <rect key="frame" x="-2" y="0.0" width="119" height="13"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="©︎ 2021 Quanta Star" id="3Oz-la-Wrv">
-                                            <font key="font" metaFont="smallSystem"/>
-                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CT3-ru-HSz">
-                                        <rect key="frame" x="-2" y="33" width="69" height="16"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="version 1.0" id="map-l9-34S">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="0GY-uw-fiI"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WpF-s4-iN9" secondAttribute="trailing" constant="20" symbolic="YES" id="0p6-WQ-Eau"/>
-                                    <constraint firstItem="1p9-W9-GbD" firstAttribute="leading" secondItem="qyO-6c-pXW" secondAttribute="leading" id="2ZE-e3-k0a"/>
-                                    <constraint firstItem="WpF-s4-iN9" firstAttribute="leading" secondItem="qyO-6c-pXW" secondAttribute="leading" id="8JC-Np-Gk5"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CT3-ru-HSz" secondAttribute="trailing" constant="20" symbolic="YES" id="9wH-yn-xPi"/>
-                                    <constraint firstItem="CT3-ru-HSz" firstAttribute="leading" secondItem="qyO-6c-pXW" secondAttribute="leading" id="J18-N3-VuH"/>
-                                    <constraint firstItem="CT3-ru-HSz" firstAttribute="top" secondItem="WpF-s4-iN9" secondAttribute="bottom" constant="8" id="L3x-Qj-2sO"/>
-                                    <constraint firstItem="WpF-s4-iN9" firstAttribute="top" secondItem="qyO-6c-pXW" secondAttribute="top" id="U5h-PN-pf5"/>
-                                    <constraint firstAttribute="bottom" secondItem="1p9-W9-GbD" secondAttribute="bottom" id="b91-FY-YV1"/>
-                                    <constraint firstAttribute="height" constant="100" id="kdk-wc-9JX"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1p9-W9-GbD" secondAttribute="trailing" constant="20" symbolic="YES" id="pY3-v8-Heb"/>
-                                </constraints>
-                            </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8LJ-DV-IV3">
+                                <rect key="frame" x="159" y="60" width="95" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Idle Box" id="ucU-K9-bsP">
+                                    <font key="font" metaFont="systemBold" size="20"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="qyO-6c-pXW" firstAttribute="leading" secondItem="uFh-KD-OxI" secondAttribute="trailing" constant="20" id="8SQ-mR-cH3"/>
-                            <constraint firstItem="uFh-KD-OxI" firstAttribute="leading" secondItem="cgb-xV-mT0" secondAttribute="leading" constant="40" id="F9Z-9j-dNa"/>
-                            <constraint firstItem="qyO-6c-pXW" firstAttribute="top" secondItem="cgb-xV-mT0" secondAttribute="top" constant="20" id="Zda-Za-Q6S"/>
-                            <constraint firstItem="uFh-KD-OxI" firstAttribute="top" secondItem="cgb-xV-mT0" secondAttribute="top" constant="20" id="csJ-iT-A9D"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="copyrightLabel" destination="1p9-W9-GbD" id="1Q1-Ix-Nr7"/>
-                        <outlet property="versionLabel" destination="CT3-ru-HSz" id="2Cb-mZ-tco"/>
+                        <outlet property="copyrightLabel" destination="VXv-yO-mda" id="TMZ-Jw-fZa"/>
+                        <outlet property="versionLabel" destination="ZXR-ar-8AN" id="U4Q-62-B4x"/>
                     </connections>
                 </viewController>
                 <customObject id="Dwk-D5-cym" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="46" y="131"/>
+            <point key="canvasLocation" x="46" y="149"/>
         </scene>
     </scenes>
     <resources>
-        <image name="about" width="32" height="32"/>
+        <image name="Icon" width="100" height="100"/>
     </resources>
 </document>

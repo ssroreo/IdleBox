@@ -2,11 +2,11 @@
 /* Class = "NSViewController"; title = "General"; ObjectID = "2Jp-Dk-fKe"; */
 "2Jp-Dk-fKe.title" = "General";
 
-/* Class = "NSTextFieldCell"; title = "NewCanvas extension requires permission.\nPlease give permission in the system preferences."; ObjectID = "76z-Iq-ZS3"; */
-"76z-Iq-ZS3.title" = "NewCanvas extension requires permission.\nPlease give permission in the system preferences.";
+/* Class = "NSTextFieldCell"; title = "Right Click Extension requires permission\nPlease give permission in the system preferences"; ObjectID = "76z-Iq-ZS3"; */
+"76z-Iq-ZS3.title" = "Right Click Extension requires permission\nPlease give permission in the system preferences";
 
-/* Class = "NSTextFieldCell"; title = "NewCanvas extension is not been allowed."; ObjectID = "H3T-zj-SP5"; */
-"H3T-zj-SP5.title" = "NewCanvas extension is not been allowed.";
+/* Class = "NSTextFieldCell"; title = "Right Click Extension is not been allowed."; ObjectID = "H3T-zj-SP5"; */
+"H3T-zj-SP5.title" = "Right Click Extension is not been allowed";
 
 /* Class = "NSButtonCell"; title = "Open System Preferences"; ObjectID = "fE4-Hb-5ES"; */
 "fE4-Hb-5ES.title" = "Open System Preferences";

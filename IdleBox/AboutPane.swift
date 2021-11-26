@@ -20,7 +20,7 @@ class AboutPane: NSViewController {
         originalSize = self.view.frame.size
         
         let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
-        versionLabel.stringValue = "version \(version)"
+        versionLabel.stringValue = "Version \(version)"
         
         let copyright = Bundle.main.object(forInfoDictionaryKey: "NSHumanReadableCopyright") as! String
         copyrightLabel.stringValue = copyright
