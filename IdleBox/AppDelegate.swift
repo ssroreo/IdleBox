@@ -22,6 +22,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         openPreferences()
     }
     
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return true
+    }
+    
     func openPreferences() {
         if mainWC == nil {
             let sb = NSStoryboard(name: "SettingsTab", bundle: nil)
