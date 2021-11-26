@@ -1,9 +1,9 @@
 
 /* Class = "NSTabViewItem"; label = "About"; ObjectID = "8DD-9x-N63"; */
-"8DD-9x-N63.label" = "About";
+"8DD-9x-N63.label" = "关于";
 
 /* Class = "NSWindow"; title = "NewCanvas  〉General"; ObjectID = "ioL-em-i5j"; */
-"ioL-em-i5j.title" = "NewCanvas  〉General";
+"ioL-em-i5j.title" = "Idle Box 首选项";
 
 /* Class = "NSTabViewItem"; label = "General"; ObjectID = "yYK-dl-BqJ"; */
-"yYK-dl-BqJ.label" = "General";
+"yYK-dl-BqJ.label" = "通用";

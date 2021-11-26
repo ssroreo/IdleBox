@@ -52,13 +52,13 @@ class FinderSync: FIFinderSync {
     func creatMenuItem(for menuType: MenuItemType) -> NSMenuItem {
         switch menuType {
         case .newFile:
-            return NSMenuItem(title: NSLocalizedString("New File", comment: ""), action: nil, keyEquivalent: "")
+            return NSMenuItem(title: "NewFile".localized, action: nil, keyEquivalent: "")
         case .copyPath:
-            return NSMenuItem(title: NSLocalizedString("Copy Path", comment: ""), action: #selector(copyPath(_:)), keyEquivalent: "")
+            return NSMenuItem(title: "CopyPath".localized, action: #selector(copyPath(_:)), keyEquivalent: "")
         case .openTerminalTab:
-            return NSMenuItem(title: NSLocalizedString("Open Terminal On Tab", comment: ""), action: #selector(openTerminalTab(_:)), keyEquivalent: "")
+            return NSMenuItem(title: "OpenTerminalOnTab".localized, action: #selector(openTerminalTab(_:)), keyEquivalent: "")
         case .openTerminal:
-            return NSMenuItem(title: NSLocalizedString("Open Terminal", comment: ""), action: #selector(openTerminal(_:)), keyEquivalent: "")
+            return NSMenuItem(title: "OpenTerminal".localized, action: #selector(openTerminal(_:)), keyEquivalent: "")
         case .custom(let title, let selector):
             if title == MenuItemTitle.separator {
                 let s = NSMenuItem(title: "----------", action: nil, keyEquivalent: "")

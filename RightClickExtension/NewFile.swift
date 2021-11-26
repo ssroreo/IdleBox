@@ -19,23 +19,23 @@ extension FinderSync: NewFile {
     struct MenuItemTitle {
         static let separator = "---"
         
-        static let textFile = NSLocalizedString("Text File", comment: "")
-        static let richFile = NSLocalizedString("Rich File", comment: "")
+        static let textFile = "TextFile".localized
+        static let richFile = "RichFile".localized
         
-        static let keynoteFile = NSLocalizedString("Keynote File", comment: "")
-        static let pagesFile = NSLocalizedString("Pages File", comment: "")
-        static let numbersFile = NSLocalizedString("Numbers File", comment: "")
+        static let keynoteFile = "KeynoteFile".localized
+        static let pagesFile = "PagesFile".localized
+        static let numbersFile = "NumbersFile".localized
         
-        static let wordFile = NSLocalizedString("Word File", comment: "")
-        static let excelFile = NSLocalizedString("Excel File", comment: "")
-        static let powerPointFile = NSLocalizedString("PowerPoint File", comment: "")
+        static let wordFile = "WordFile".localized
+        static let excelFile = "ExcelFile".localized
+        static let powerPointFile = "PowerPointFile".localized
         
-        static let markdownFile = NSLocalizedString("Markdown File", comment: "")
-        static let HTMLFile = NSLocalizedString("HTML File", comment: "")
-        static let CSSFile = NSLocalizedString("CSS File", comment: "")
-        static let JavaScriptFile = NSLocalizedString("JavaScipt File", comment: "")
-        static let pythonFile = NSLocalizedString("Python File", comment: "")
-        static let other = NSLocalizedString("Others", comment: "")
+        static let markdownFile = "MarkdownFile".localized
+        static let HTMLFile = "HTMLFile".localized
+        static let CSSFile = "CSSFile".localized
+        static let JavaScriptFile = "JavaSciptFile".localized
+        static let pythonFile = "PythonFile".localized
+        static let other = "Others".localized
     }
     
     func getFileType(menuItemTitle: String?) -> String {
