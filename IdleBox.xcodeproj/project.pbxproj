@@ -99,6 +99,7 @@
 		9372DCDD274CCA990030EF63 = {
 			isa = PBXGroup;
 			children = (
+				93B972CB2754674300C44730 /* Resources */,
 				93916E1E274DC806003FD856 /* Localizable.strings */,
 				9372DCE8274CCA990030EF63 /* IdleBox */,
 				9372DCFB274CCACB0030EF63 /* RightClickExtension */,
@@ -151,6 +152,13 @@
 				93B97268274FA70A00C44730 /* NewFile.swift */,
 			);
 			name = Init;
+			sourceTree = "<group>";
+		};
+		93B972CB2754674300C44730 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
