@@ -22,6 +22,8 @@
 		93B97264274F72A100C44730 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 93916E1E274DC806003FD856 /* Localizable.strings */; };
 		93B97266274FA32700C44730 /* NSPasteboard+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B97265274FA32700C44730 /* NSPasteboard+Additions.swift */; };
 		93B97269274FA70A00C44730 /* NewFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B97268274FA70A00C44730 /* NewFile.swift */; };
+		93B972CE2754683F00C44730 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93B972CC2754683F00C44730 /* background.jpg */; };
+		93B972CF2754683F00C44730 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 93B972CD2754683F00C44730 /* Icon.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		93B97263274F6EE100C44730 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SettingsTab.strings"; sourceTree = "<group>"; };
 		93B97265274FA32700C44730 /* NSPasteboard+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPasteboard+Additions.swift"; sourceTree = "<group>"; };
 		93B97268274FA70A00C44730 /* NewFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFile.swift; sourceTree = "<group>"; };
+		93B972CC2754683F00C44730 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		93B972CD2754683F00C44730 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,8 @@
 		93B972CB2754674300C44730 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				93B972CC2754683F00C44730 /* background.jpg */,
+				93B972CD2754683F00C44730 /* Icon.icns */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -245,8 +251,10 @@
 			files = (
 				9372DCEC274CCA9B0030EF63 /* Assets.xcassets in Resources */,
 				93B97253274F6DF200C44730 /* AboutPane.storyboard in Resources */,
+				93B972CE2754683F00C44730 /* background.jpg in Resources */,
 				93B97264274F72A100C44730 /* Localizable.strings in Resources */,
 				93B97235274F609F00C44730 /* SettingsTab.storyboard in Resources */,
+				93B972CF2754683F00C44730 /* Icon.icns in Resources */,
 				9372DCEF274CCA9B0030EF63 /* MainMenu.xib in Resources */,
 				93B9724B274F6DDC00C44730 /* GeneralPane.storyboard in Resources */,
 			);
