@@ -11,6 +11,7 @@ import FinderSync
 class GeneralPane: NSViewController {
 
     @IBOutlet weak var statusLabel: NSTextField!
+    @IBOutlet weak var systemPreferenceButton: NSButton!
     
     var originalSize: CGSize!
     
@@ -28,9 +29,11 @@ class GeneralPane: NSViewController {
     
     @objc func updateStatus() {
         if FIFinderSyncController.isExtensionEnabled {
+            systemPreferenceButton.isEnabled = false
             statusLabel.stringValue = "AllowedInformative".localized
             statusLabel.textColor = NSColor.init(red: 0.196, green: 0.804, blue: 0.196, alpha: 1)
         } else {
+            systemPreferenceButton.isEnabled = true
             statusLabel.stringValue = "NotAllowedInformative".localized
             statusLabel.textColor = NSColor.red
         }

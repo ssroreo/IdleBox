@@ -65,6 +65,7 @@ Please give permission in the system preferences</string>
                     </view>
                     <connections>
                         <outlet property="statusLabel" destination="L6m-LN-29V" id="z2M-iG-iT7"/>
+                        <outlet property="systemPreferenceButton" destination="IqQ-XB-EeP" id="2C0-Al-eg4"/>
                     </connections>
                 </viewController>
                 <customObject id="pbL-oB-Ni2" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
