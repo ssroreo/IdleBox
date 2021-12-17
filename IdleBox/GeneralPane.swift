@@ -29,8 +29,10 @@ class GeneralPane: NSViewController {
     @objc func updateStatus() {
         if FIFinderSyncController.isExtensionEnabled {
             statusLabel.stringValue = "AllowedInformative".localized
+            statusLabel.textColor = NSColor.init(red: 0.196, green: 0.804, blue: 0.196, alpha: 1)
         } else {
             statusLabel.stringValue = "NotAllowedInformative".localized
+            statusLabel.textColor = NSColor.red
         }
     }
         
